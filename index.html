@@ -145,7 +145,7 @@ aunque el tiempo los guarde… siguen en la vida.
 <h5>Por q me gustas?</h5>
 <section class="contenido-poema"></section>
 <pre>
-  Me gustaste de la primera vez que te vi,
+  Me gustaste desde la primera vez que te vi
    primero vi lo hermoso que es tu pelo despues pude ver tus ojitos y me enamore aun mas.
 Despues tuve la chanza de conocerte y me enamore aun mas de tu forma de ser.
  me gusta como conectamos super rapido. Me enseñaste que no se necesita tanto tiempo para amar a alguien.
@@ -156,7 +156,7 @@ Me encantas!!
         </section>
 
         <section class="galeria">
-<img src="foto4.jpg">
+<img src="foto4.jpg" alt="Descripción de la foto 1">
         </section>
         <section class="galeria"></section>
         <h6>Sin decirlo...</h6>
@@ -223,3 +223,62 @@ no solo en los días buenos,
 sino en todos los que vengan.
 <pre>
   <img src="foto6.jpg">
+   <section class="galeria"></section>
+        <h8>💖</h8>
+<section class="contenido-poema"></section>
+<pre>La verdad es que no soy muy bueno diciendo estas cosas de frente, me trabo o me pongo nervioso, en especial contigo todo se siente muy distinto. Siento que puedo ser yo, y por eso no quería guardarme esto más tiempo.
+
+Me gusta mucho cómo eres. No solo lo que todos ven, sino cómo hablas,tu forma de ser la forma en que piensas. Todo empezo desde el dia en el que te conoci te volviste alguien súper importante para mí, de esas personas que tienes en la cabeza todo el día y que, sin hacer mucho, logran que todo sea mejor, tu presencia me pone demasiado alegre.
+
+No es nada planeado ni pretendo que sea perfecto,ya q no son muy bueno en ese sentido y solo quiero decirte lo que siento y es real. Solo quería que lo supieras porque ya no aguantaba las ganas de decírtelo.
+Ademas esta puede que sea la ultima vez te vea y prefiero decirtelo ya en este preciso momento antes de que todo acabe.
+<pre>
+  <img src="foto7.jpg">
+  </body><script>
+function crearRosa() {
+    const rosa = document.createElement('div');
+    // Usamos el símbolo de la rosa (🌹)
+    rosa.innerText = '🌹'; 
+    rosa.classList.add('rosa-caida');
+    
+    // Posición horizontal aleatoria
+    rosa.style.left = Math.random() * 100 + "vw";
+    // Tamaño aleatorio para dar profundidad
+    rosa.style.fontSize = Math.random() * (30 - 20) + 20 + "px"; // Un poco más grandes
+    // Duración de la caída aleatoria (entre 4 y 8 segundos) - Un poco más lentas
+    rosa.style.animationDuration = Math.random() * (8 - 4) + 4 + "s";
+    // Opacidad aleatoria para dar realismo
+    rosa.style.opacity = Math.random();
+
+    document.body.appendChild(rosa);
+
+    // Se eliminan después de caer para no saturar la memoria
+    setTimeout(() => {
+        rosa.remove();
+    }, 8000);
+}
+
+// Crea una rosa cada 400 milisegundos (un poco menos frecuente)
+setInterval(crearRosa, 400);
+
+// Estilo necesario para las rosas (inyectado por JS para no tocar tu CSS)
+const estiloRosas = document.createElement('style');
+estiloRosas.innerHTML = `
+    .rosa-caida {
+        position: fixed;
+        top: -50px;
+        z-index: 9999;
+        user-select: none;
+        pointer-events: none;
+        /* ELIMINADA LA LÍNEA DE FILTRO PARA QUE SEAN ROJAS */
+        animation: caer linear forwards;
+    }
+
+    @keyframes caer {
+        to {
+            transform: translateY(105vh) rotate(360deg);
+        }
+    }
+`;
+document.head.appendChild(estiloRosas);
+</script>
